@@ -40,10 +40,12 @@ const Index: NextSFC<IndexProps> = ({ configs }) => (
 )
 
 Index.getInitialProps = async ({ req }) => {
-  const protocol = req
-    ? `${req.headers['x-forwarded-proto']}:`
-    : location.protocol
-  const host = req ? req.headers['x-forwarded-host'] : location.host
+  const protocol =
+    (req ? `${req.headers['x-forwarded-proto']}:` : location.protocol) ||
+    'https:'
+  const host = req
+    ? req.headers['x-forwarded-host']
+    : location.host || 'theprojectalpha.hugos29.now.sh'
 
   const { data: configs } = await fetch(`${protocol}//${host}/api/config`).then(
     r => r.json()
