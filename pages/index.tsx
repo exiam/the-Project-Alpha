@@ -40,12 +40,10 @@ const Index: NextSFC<IndexProps> = ({ configs }) => (
 )
 
 Index.getInitialProps = async ({ req }) => {
-  const protocol =
-    'http:' /*req
+  const protocol = req
     ? `${req.headers['x-forwarded-proto']}:`
-    : location.protocol*/
-  const host =
-    (req ? req.headers['x-forwarded-host'] : location.host) || 'localhost:3000'
+    : location.protocol
+  const host = req ? req.headers['x-forwarded-host'] : location.host
 
   const { data: configs } = await fetch(`${protocol}//${host}/api/config`).then(
     r => r.json()
