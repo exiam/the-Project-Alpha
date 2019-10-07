@@ -3,10 +3,10 @@ import { SQLStatement } from 'sql-template-strings'
 
 export const db = mysql({
   config: {
-    host: process.env.next_public_mysql_host,
-    database: process.env.next_public_mysql_database,
-    user: process.env.next_public_mysql_user,
-    password: process.env.next_public_mysql_password,
+    host: process.env.NEXT_PUBLIC_MYSQL_HOST,
+    database: process.env.NEXT_PUBLIC_MYSQL_DATABASE,
+    user: process.env.NEXT_PUBLIC_MYSQL_USER,
+    password: process.env.NEXT_PUBLIC_MYSQL_PASSWORD,
   },
 })
 
