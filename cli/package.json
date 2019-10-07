@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {},
+  "name": "@hugo_s29/alpha",
+  "description": "A CLI to bootstrap my new projects",
+  "bin": {
+    "@hugo_s29/alpha": "bin/alpha",
+    "alpha": "bin/alpha"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "alpha",
+    "config",
+    "cloud"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "arg": "^4.1.1",
+    "boxen": "^4.1.0",
+    "email-prompt": "^0.3.2",
+    "enquirer": "^2.3.2",
+    "esm": "^3.2.25",
+    "kleur": "^3.0.3",
+    "ora": "^4.0.2",
+    "yargs": "^14.0.0"
+  }
+}
