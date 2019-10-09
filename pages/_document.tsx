@@ -34,9 +34,6 @@ export default class MyDocument extends Document<{}> {
       sheet.seal()
     }
   }
-  /*
-          <link rel="stylesheet" href="/static/color.css" />
-   */
   render() {
     return (
       <Html lang="fr">

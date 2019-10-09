@@ -1,14 +1,65 @@
-import { query } from '../../lib/db'
-import sql from 'sql-template-strings'
+import { query } from '../lib/db'
+import sql, { SQLStatement } from 'sql-template-strings'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Joi from '@hapi/joi'
+
+/**
+ * Handle GET Requests on /api/config
+ * @param {NextApiRequest} req Request
+ * @param {NextApiResponse} req Response
+ * @returns {object} see example response
+ * @exports
+ * {
+ *  "data": [
+ *    {
+ *      "ID": 1,
+ *      "UserID": 1,
+ *      "DisplayName": "Prettier",
+ *      "Date": "2019-10-05T22:00:00.000Z",
+ *      "Type": "prettier_config",
+ *      "FileFormat": "json",
+ *      "FileName": ".prettierrc",
+ *      "Data": "{\"trailingComma\":\"es5\",\"tabWidth\":2,\"singleQuote\":true,\"semi\":false}"
+ *    }
+ *  ]
+ *}
+ */
+export const getFunction = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => {
+  const { limit } = req.query
+  let q: SQLStatement
+  if (!limit || Array.isArray(limit)) {
+    q = sql`
+    SELECT *
+    FROM config
+  `
+  } else {
+    q = sql`
+    SELECT *
+    FROM config
+    LIMIT ${parseInt(limit)}
+  `
+  }
+  const configs = await query(q)
+
+  if (configs.error) {
+    res.status(500).json(configs)
+  } else {
+    res.status(200).json(configs)
+  }
+}
 
 /**
  * Handle POSTS Requests on /api/config
  * @param {NextApiResponse} req Request
  * @param {NextApiResponse} req Response
  */
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export const postFunction = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => {
   const schema = Joi.object({
     UserID: Joi.number()
       .required()

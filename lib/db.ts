@@ -18,11 +18,20 @@ export interface QueryResult {
 export const query = async (
   query: string | SQLStatement
 ): Promise<QueryResult> => {
-  try {
-    const data = await db.query(query)
-    await db.end()
-    return { data }
-  } catch (error) {
-    return { error }
+  if (
+    process.env.NEXT_PUBLIC_MYSQL_HOST &&
+    process.env.NEXT_PUBLIC_MYSQL_DATABASE &&
+    process.env.NEXT_PUBLIC_MYSQL_USER &&
+    process.env.NEXT_PUBLIC_MYSQL_PASSWORD
+  ) {
+    try {
+      const data = await db.query(query)
+      await db.end()
+      return { data }
+    } catch (error) {
+      return { error }
+    }
+  } else {
+    return { error: 'Missing ENV variables' }
   }
 }
