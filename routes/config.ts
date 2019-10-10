@@ -2,11 +2,9 @@ import { query } from '../lib/db'
 import sql, { SQLStatement } from 'sql-template-strings'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Joi from '@hapi/joi'
-
 /**
  * Handle GET Requests on /api/config
- * @param {NextApiRequest} req Request
- * @param {NextApiResponse} req Response
+ * @param {number | undefined} limit limit the number of elements
  * @returns {object} see example response
  * @exports
  * {
@@ -24,13 +22,9 @@ import Joi from '@hapi/joi'
  *  ]
  *}
  */
-export const getFunction = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
-  const { limit } = req.query
+export const getFunction = (limit?: number) => {
   let q: SQLStatement
-  if (!limit || Array.isArray(limit)) {
+  if (!limit) {
     q = sql`
     SELECT *
     FROM config
@@ -39,10 +33,23 @@ export const getFunction = async (
     q = sql`
     SELECT *
     FROM config
-    LIMIT ${parseInt(limit)}
+    LIMIT ${limit}
   `
   }
-  const configs = await query(q)
+  return query(q)
+}
+/**
+ * Handle GET Requests on /api/config
+ * @param {NextApiRequest} req Request
+ * @param {NextApiResponse} req Response
+ */
+
+export const getRoute = async (req: NextApiRequest, res: NextApiResponse) => {
+  const limit =
+    req.query && req.query.limit && !Array.isArray(req.query.limit)
+      ? parseInt(req.query.limit)
+      : undefined
+  const configs = await getFunction(limit)
 
   if (configs.error) {
     res.status(500).json(configs)
@@ -56,10 +63,8 @@ export const getFunction = async (
  * @param {NextApiResponse} req Request
  * @param {NextApiResponse} req Response
  */
-export const postFunction = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
+
+export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   const schema = Joi.object({
     UserID: Joi.number()
       .required()
