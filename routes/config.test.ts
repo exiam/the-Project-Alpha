@@ -19,6 +19,7 @@ describe('GET config', () => {
     await expect(getFunction()).resolves.not.toBeNull()
   })
   it('should give me a result well formated', async () => {
-    await expect(getFunction()).resolves.toHaveProperty(['error', 'data'])
+    await expect(getFunction()).resolves.toHaveProperty(['error'])
+    await expect(getFunction()).resolves.toHaveProperty(['data'])
   })
 })
