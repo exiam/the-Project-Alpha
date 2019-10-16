@@ -1,28 +1,25 @@
-import arg from 'arg'
+import { red } from 'kleur'
+import execute, { add, setDefault } from './helper/functions'
+import fetch from 'node-fetch'
 import boxen from 'boxen'
-import ora from 'ora'
-import { red, white, blue, bold } from 'kleur'
-import email from 'email-prompt'
-import { prompt } from 'enquirer'
 
-export function cli(raw) {
-  const args = arg(
-    {
-      '--git': Boolean,
-      '--yes': Boolean,
-      '--install': Boolean,
-      '-g': '--git',
-      '-y': '--yes',
-      '-i': '--install',
-    },
-    {
-      argv: raw.slice(2),
-    }
-  )
-  return {
-    skipPrompts: args['--yes'] || false,
-    git: args['--git'] || false,
-    template: args._[0],
-    runInstall: args['--install'] || false,
-  }
+export async function cli(params) {
+  console.log('OK')
+  add('get', async params => {
+    console.log('OK2')
+    const res = await fetch(
+      'https://theprojectalpha.hugos29.now.sh/api/config'
+    ).then(r => r.json())
+    console.log(res)
+    res &&
+      res.data &&
+      Array.isArray(res.data) &&
+      res.data.forEach(
+        conf => conf.DisplayName && console.log(red(boxen(conf.DisplayName)))
+      )
+  })
+
+  setDefault(p => red().bgWhite(`${p[2]} is not a command`))
+
+  return execute(params)
 }
