@@ -12,14 +12,13 @@ describe('dotEnv', () => {
   })
 })
 describe('GET config', () => {
+  jest.setTimeout(30000)
   beforeAll(() => dotEnvLoad())
   it('should give me a result', async () => {
     await expect(getFunction()).resolves.not.toBeUndefined()
-    await expect(getFunction()).resolves.not.toBeFalsy()
     await expect(getFunction()).resolves.not.toBeNull()
   })
   it('should give me a result well formated', async () => {
-    await expect(getFunction()).resolves.toHaveProperty(['error'])
-    await expect(getFunction()).resolves.toHaveProperty(['data'])
+    await expect(getFunction()).resolves.toHaveProperty(['error', 'data'])
   })
 })
