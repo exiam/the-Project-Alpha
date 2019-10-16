@@ -29,7 +29,6 @@ export const query = async (
     try {
       const data = await db.query(query)
       await db.end()
-      console.log('ended')
       return { data, error }
     } catch (error) {
       return { data, error }

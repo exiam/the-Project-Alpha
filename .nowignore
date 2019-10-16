@@ -105,4 +105,5 @@ public
 
 setupTests.js
 jest.config.ts
+jest.setup.ts
 jest.tsconfig.json
