@@ -14,14 +14,12 @@ describe('dotEnv', () => {
 describe('GET config', () => {
   beforeAll(() => dotEnvLoad())
   it('should give me a result', async () => {
-    const res = await expect(getFunction()).resolves
-    res.not.toBeUndefined()
-    res.not.toBeFalsy()
-    res.not.toBeNull()
+    await expect(getFunction()).resolves.not.toBeUndefined()
+    await expect(getFunction()).resolves.not.toBeFalsy()
+    await expect(getFunction()).resolves.not.toBeNull()
   })
   it('should give me a result well formated', async () => {
-    const res = await expect(getFunction()).resolves
-    await res.toHaveProperty(['error'])
-    await res.toHaveProperty(['data'])
+    await expect(getFunction()).resolves.toHaveProperty(['error'])
+    await expect(getFunction()).resolves.toHaveProperty(['data'])
   })
 })
