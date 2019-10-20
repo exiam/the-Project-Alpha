@@ -10,16 +10,16 @@ export const db = mysql({
   },
 })
 
-export interface QueryResult {
+export interface QueryResult<Type> {
   error?: any
-  data?: any
+  data?: Type[]
 }
 
-export const query = async (
+export const query = async <T>(
   query: string | SQLStatement
-): Promise<QueryResult> => {
+): Promise<QueryResult<T>> => {
   const error = {}
-  const data = {}
+  const data: T[] = []
   if (
     process.env.NEXT_PUBLIC_MYSQL_HOST &&
     process.env.NEXT_PUBLIC_MYSQL_DATABASE &&
@@ -27,7 +27,7 @@ export const query = async (
     process.env.NEXT_PUBLIC_MYSQL_PASSWORD
   ) {
     try {
-      const data = await db.query(query)
+      const data = (await db.query(query)) as T[]
       await db.end()
       return { data, error }
     } catch (error) {
