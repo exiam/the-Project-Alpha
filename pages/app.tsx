@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
+import Router from 'next/router'
+import React, { useState, useEffect } from 'react'
 import { NextSFC } from '../@types/next'
 import Highlight from 'react-highlight.js'
 import { beautifier as JSONBeautifier } from '../utils/json'
@@ -33,18 +34,6 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
   const [user, setUser] = useState<false | User>(initialUser)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const usernameField = useRef<HTMLInputElement>()
-  const passwordField = useRef<HTMLInputElement>()
-
-  const loadUser = async () => {
-    const data = await apiFetcher<User>(
-      false,
-      headers,
-      `/api/infos?token=${token}`
-    )
-    setUser(data)
-  }
-
   const loadData = async (
     headers: IncomingHttpHeaders,
     server: boolean,
@@ -59,6 +48,8 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
       : []
 
   useEffect(() => {
+    if (!token) location.replace(location.href.replace('/app', '/login'))
+
     setIsLoading(true)
     loadData(headers, false, token).then(d => {
       setConfigs(d)
@@ -66,30 +57,6 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
     })
   }, [token])
 
-  const loginBtnClick = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): Promise<void> => {
-    e.preventDefault()
-
-    const { token, error } = await apiFetcher<{
-      error?: string | any
-      token?: string
-    }>(false, headers, '/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: usernameField.current.value,
-        password: passwordField.current.value,
-      }),
-    })
-    if (error) return alert(error)
-
-    document.cookie = `loginCookie=${token}; path=/`
-    setToken(token)
-    await loadUser()
-  }
   const logoutBtnClick = (
     e: React.MouseEvent<HTMLInputElement, MouseEvent>
   ): void => {
@@ -101,15 +68,7 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
     setConfigs([])
   }
 
-  const Main = styled.main`
-    div.zi-card {
-      /*margin: 0;*/
-
-      pre {
-        padding: 0;
-      }
-    }
-  `
+  const Main = styled.main``
 
   return (
     <Main>
@@ -125,11 +84,7 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
           <button onClick={logoutBtnClick}>Log out</button>
         )
       ) : (
-        <form>
-          <input type="text" ref={usernameField} required />
-          <input type="password" ref={passwordField} required />
-          <input type="submit" onClick={loginBtnClick} value="Login" />
-        </form>
+        <form></form>
       )}
       {isLoading ? <div>Loading ...</div> : <></>}
 
@@ -152,8 +107,21 @@ const Index: NextSFC<IndexProps> = ({ headers, loginCookie, initialUser }) => {
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
   const loginCookie = cookies(ctx).loginCookie || ''
+
+  if (!loginCookie) {
+    const { res } = ctx
+    if (res) {
+      res.writeHead(302, {
+        Location: '/login',
+      })
+      res.end()
+    } else {
+      Router.push('/login')
+    }
+  }
+
   const user = await apiFetcher<User>(
-    true,
+    !!ctx.req,
     ctx.req.headers,
     `/api/infos?token=${loginCookie}`
   )
