@@ -3,17 +3,8 @@ import fetch from 'isomorphic-unfetch'
 import { NextSFC } from '../@types/next'
 import Highlight from 'react-highlight.js'
 import { beautifier as JSONBeautifier } from '../utils/json'
-
-export interface config {
-  ID: 1
-  UserID: 1
-  DisplayName: string
-  Date: string
-  Type: string
-  FileFormat: string
-  FileName: string
-  Data: string
-}
+import { config } from './types'
+import Config from './components/config/config.component'
 
 export interface IndexProps {
   configs: config[]
@@ -23,16 +14,7 @@ const Index: NextSFC<IndexProps> = ({ configs }) => (
   <main>
     <h1>The Project Alpha</h1>
     {configs.map(config => (
-      <div key={config.ID}>
-        <h3>
-          {config.DisplayName}({config.FileName})
-        </h3>
-        <Highlight language={config.FileFormat}>
-          {config.FileFormat == 'json'
-            ? JSONBeautifier(config.Data)
-            : config.Data}
-        </Highlight>
-      </div>
+      <Config config={config} />
     ))}
   </main>
 )
