@@ -16,7 +16,6 @@ export default class MyDocument extends Document<{}> {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          //@ts-ignore
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         })
 
@@ -42,14 +41,27 @@ export default class MyDocument extends Document<{}> {
             rel="stylesheet"
             href="https://highlightjs.org/static/demo/styles/an-old-hope.css"
           />
-          <link rel="stylesheet" href="/static/styles/global.css" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
           <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Fira+Code:400,500|Fira+Sans|Poppins:300,600|Raleway:400,700,800&display=swap"
+            rel="stylesheet"
+          />
+          <style jsx global>{`
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            body {
+              font-family: sans-serif;
+            }
+          `}</style>
         </Head>
-        <body>
+        <body className="zi-main zi-layout">
           <Main />
           <NextScript />
         </body>

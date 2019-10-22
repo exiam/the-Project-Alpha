@@ -1,9 +1,11 @@
 import { query } from '../lib/db'
-import sql, { SQLStatement } from 'sql-template-strings'
+import mysql, { SQLStatement } from 'sql-template-strings'
 import { NextApiRequest, NextApiResponse } from 'next'
-import Joi from '@hapi/joi'
+//import Joi from '@hapi/joi'
+import verifyToken from '../helper/verifyToken'
 /**
  * Handle GET Requests on /api/config
+ * @param {number} userID limit the number of elements
  * @param {number | undefined} limit limit the number of elements
  * @returns {object} see example response
  * @exports
@@ -22,17 +24,19 @@ import Joi from '@hapi/joi'
  *  ]
  *}
  */
-export const getFunction = (limit?: number) => {
+export const getFunction = (UserID: number, limit?: number) => {
   let q: SQLStatement
   if (!limit) {
-    q = sql`
+    q = mysql`
     SELECT *
     FROM config
+    WHERE UserID=${UserID}
   `
   } else {
-    q = sql`
+    q = mysql`
     SELECT *
     FROM config
+    WHERE UserID=${UserID}
     LIMIT ${limit}
   `
   }
@@ -45,24 +49,36 @@ export const getFunction = (limit?: number) => {
  */
 
 export const getRoute = async (req: NextApiRequest, res: NextApiResponse) => {
+  const token =
+    req.query && req.query.token && !Array.isArray(req.query.token)
+      ? encodeURIComponent(req.query.token)
+      : undefined
   const limit =
     req.query && req.query.limit && !Array.isArray(req.query.limit)
       ? parseInt(req.query.limit)
       : undefined
-  const configs = await getFunction(limit)
 
-  if (configs.error) {
-    res.status(500).json(configs)
+  const user = await verifyToken(token)
+
+  if (!user) {
+    return res.status(500).json({
+      configs: { data: [], error: 'Invalid username or token' },
+    })
+  }
+
+  const configs = await getFunction(user.ID, limit)
+  if (Object.keys(configs.error).length > 0) {
+    res.status(500).json({ configs })
   } else {
-    res.status(200).json(configs)
+    res.status(200).json({ configs })
   }
 }
-
+/*
 /**
  * Handle POSTS Requests on /api/config
  * @param {NextApiResponse} req Request
  * @param {NextApiResponse} req Response
- */
+ * /
 
 export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   const schema = Joi.object({
@@ -105,7 +121,7 @@ export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   } = schema.validate(req.body)
   if (error) return res.status(400).json({ error: error.details })
-  const configs = await query(sql`
+  const configs = await query(mysql`
   INSERT INTO \`config\` (\`ID\`, \`UserID\`, \`DisplayName\`, \`Date\`, \`Type\`, \`FileFormat\`, \`FileName\`, \`Data\`) VALUES 
   (NULL, ${UserID}, ${DisplayName}, ${CreationDate}, ${Type}, ${FileFormat ||
     null}, ${FileName}, ${Data})
@@ -114,3 +130,4 @@ export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   if (configs.error) res.status(500).json(configs)
   else res.status(200).json(configs)
 }
+*/
