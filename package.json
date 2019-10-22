@@ -14,7 +14,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "latest",
     "react": "16.10.2",
-    "react-dom": "16.8.6",
+    "react-dom": "16.10.2",
     "react-highlight.js": "^1.0.7",
     "serverless-mysql": "^1.5.1",
     "sql-template-strings": "^2.2.2",
