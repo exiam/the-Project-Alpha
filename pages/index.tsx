@@ -1,10 +1,8 @@
 import React from 'react'
 import fetch from 'isomorphic-unfetch'
 import { NextSFC } from '../@types/next'
-import Highlight from 'react-highlight.js'
-import { beautifier as JSONBeautifier } from '../utils/json'
-import { config } from './types'
-import Config from './components/config/config.component'
+import { config } from '../@types'
+import Config from '../components/config/config.component'
 
 export interface IndexProps {
   configs: config[]

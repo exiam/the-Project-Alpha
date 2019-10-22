@@ -1,7 +1,7 @@
 import React from 'react'
 import Highlight from 'react-highlight.js'
-import { beautifier as JSONBeautifier } from '../../../utils/json'
-import { config } from '../../types'
+import { beautifier as JSONBeautifier } from '../../utils/json'
+import { config } from '../../@types'
 
 interface IProps {
   config: config
