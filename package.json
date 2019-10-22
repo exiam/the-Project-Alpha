@@ -9,7 +9,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006 -c ./.storybook"
   },
   "dependencies": {
     "@hapi/joi": "^16.1.7",
