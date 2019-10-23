@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 
-import './button.style.css'
-
 interface IProps {
   primary?: boolean
   color?: string
+  hoverColor?: string
   large?: boolean
   size?: number
 }
 
-const getColor = (props: IProps, defaultColor?: string | false): string =>
-  props.color || defaultColor || '#07928B'
+const getColor = (props: IProps, defaultColor: string = '#07928B'): string =>
+  props.color || defaultColor
+const getHoverColor = (
+  props: IProps,
+  defaultHoverColor: string = '#056b66'
+): string => props.hoverColor || defaultHoverColor
 
 const getSize = ({ large, size }: IProps): number => {
   if (size) return size
@@ -19,18 +22,34 @@ const getSize = ({ large, size }: IProps): number => {
 
   return s
 }
-const Config = styled.button<IProps>`
+
+const Button = styled.button<IProps>`
   background: ${p => (p.primary ? getColor(p) : 'transparent')};
   border: ${p => getColor(p)} solid 3px;
   border-radius: 5px;
   padding: 7.5px 15px;
 
-  color: ${p => getColor(p, p.primary ? 'white' : false)};
+  color: ${p => getColor(p, p.primary ? 'white' : undefined)};
   width: ${p => getSize(p)}px;
   margin: 6px;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: bold;
+
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    background: ${p => getColor(p)};
+    color: white;
+    box-shadow: 3.5px 3.5px ${p => getHoverColor(p)};
+  }
+  &:active {
+    background: ${p => getColor(p)};
+    color: white;
+    border-width: 5px;
+    box-shadow: 5.5px 5.5px ${p => getHoverColor(p)};
+  }
 `
 
-export default Config
+export default Button

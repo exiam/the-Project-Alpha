@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@hapi/joi": "^16.1.7",
-    "@zeit-ui/style": "^0.9.3",
     "@zeit/next-css": "^1.0.1",
     "bcrypt": "^3.0.6",
     "highlight.js": "^9.15.10",
@@ -50,6 +49,8 @@
     "dotenv-load": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.3",
+    "expect": "^24.9.0",
     "jest": "^24.9.0",
     "next-compose-plugins": "^2.2.0",
     "next-env": "^1.1.0",
