@@ -1,7 +1,5 @@
 import * as React from 'react'
 import TextField, { Props, Color } from './textfield.component'
-import { setup } from '../../setupTests'
-setup()
 import { mount } from 'enzyme'
 
 const fakeProps: Props = {

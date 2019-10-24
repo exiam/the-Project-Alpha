@@ -1,7 +1,5 @@
 import * as React from 'react'
 import GroupBox, { GroupBoxProps } from './groupbox.component'
-import { setup } from '../../setupTests'
-setup()
 import { mount } from 'enzyme'
 
 const fakeProps: GroupBoxProps = {

@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Primary 1`] = `
+Array [
+  <button
+    className="buttoncomponent__Button-sjtcji-0 dwjTtU"
+  >
+    Prim button
+  </button>,
+  <button
+    className="buttoncomponent__Button-sjtcji-0 dtiUCr"
+  >
+    Prim button
+  </button>,
+]
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+Array [
+  <button
+    className="buttoncomponent__Button-sjtcji-0 kJylML"
+  >
+    Second button
+  </button>,
+  <button
+    className="buttoncomponent__Button-sjtcji-0 kYvfdw"
+  >
+    Second button
+  </button>,
+]
+`;
+
+exports[`Storyshots Group Box Break End 1`] = `
+<div
+  className="groupboxcomponent__GroupBoxContainer-wdcs7e-2 jDlCAG"
+  width={300}
+>
+  <div
+    className="groupboxcomponent__GroupBoxLabel-wdcs7e-0 fChCgA"
+    data-test-name="label"
+  >
+    BreakEnd GroupBox
+  </div>
+  <div
+    className="groupboxcomponent__GroupBoxInner-wdcs7e-1 iinlWC"
+  />
+  <span
+    className="groupboxcomponent__GroupBoxOverlay-wdcs7e-3 jXXKQv"
+    href="#"
+  />
+</div>
+`;
+
+exports[`Storyshots Group Box Break End With Overlay Text 1`] = `
+<div
+  className="groupboxcomponent__GroupBoxContainer-wdcs7e-2 jDlCAG"
+  width={300}
+>
+  <div
+    className="groupboxcomponent__GroupBoxLabel-wdcs7e-0 fChCgA"
+    data-test-name="label"
+  >
+    BreakEnd with overlay text GroupBox
+  </div>
+  <div
+    className="groupboxcomponent__GroupBoxInner-wdcs7e-1 iinlWC"
+  />
+  <a
+    className="groupboxcomponent__GroupBoxOverlay-wdcs7e-3 cbfWDp"
+    href="#"
+  >
+    See more
+  </a>
+</div>
+`;
+
+exports[`Storyshots Group Box Grandient End 1`] = `
+<div
+  className="groupboxcomponent__GroupBoxContainer-wdcs7e-2 jDlCAG"
+  width={300}
+>
+  <div
+    className="groupboxcomponent__GroupBoxLabel-wdcs7e-0 fChCgA"
+    data-test-name="label"
+  >
+    GrandientEnd GroupBox
+  </div>
+  <div
+    className="groupboxcomponent__GroupBoxInner-wdcs7e-1 iinlWC"
+  />
+  <span
+    className="groupboxcomponent__GroupBoxOverlay-wdcs7e-3 hotumO"
+    href="#"
+  />
+</div>
+`;
+
+exports[`Storyshots Group Box Grandient End With Overlay Text 1`] = `
+<div
+  className="groupboxcomponent__GroupBoxContainer-wdcs7e-2 jDlCAG"
+  width={300}
+>
+  <div
+    className="groupboxcomponent__GroupBoxLabel-wdcs7e-0 fChCgA"
+    data-test-name="label"
+  >
+    GrandientEnd with overlay text GroupBox
+  </div>
+  <div
+    className="groupboxcomponent__GroupBoxInner-wdcs7e-1 iinlWC"
+  />
+  <a
+    className="groupboxcomponent__GroupBoxOverlay-wdcs7e-3 iPmUVu"
+    href="#"
+  >
+    See more
+  </a>
+</div>
+`;
+
+exports[`Storyshots Navigation Connected 1`] = `
+<nav
+  className="navcomponent__NavContainer-ezej9e-0 dZkjAz"
+>
+  <div
+    className="navcomponent__NavContainer2-ezej9e-1 inUGsX"
+  >
+    <h3
+      className="navcomponent__NavLogoH3-ezej9e-2 iYzIrr"
+    >
+      <a
+        href="/"
+      >
+        The Project αlphα
+      </a>
+    </h3>
+    <ul
+      className="navcomponent__NavItems-ezej9e-3 hBBRFh"
+    >
+      <li
+        className="navcomponent__Navlistitem-ezej9e-4 ewlFQI"
+      >
+        <a
+          className="navcomponent__Navlistitemlink-ezej9e-5 dSlFbg"
+          href="/app"
+        >
+          Dashboard
+        </a>
+      </li>
+      <li
+        className="navcomponent__Navlistitem-ezej9e-4 ewlFQI"
+      >
+        <a
+          className="navcomponent__Navlistitemlink-ezej9e-5 dSlFbg"
+          href="/documentation"
+        >
+          Documentation
+        </a>
+      </li>
+      <li
+        className="navcomponent__Navlistitem-ezej9e-4 ewlFQI"
+      >
+        <a
+          className="navcomponent__Navlistitemlink-ezej9e-5 bCrsAj"
+          href="/getting-started"
+        >
+          Getting started
+        </a>
+      </li>
+      <a
+        className="navcomponent__UserCircle-ezej9e-6 chFbUu"
+        color="#dce775"
+        href="/app"
+      >
+        TU
+      </a>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Navigation Not Connected 1`] = `
+<nav
+  className="navcomponent__NavContainer-ezej9e-0 hOsywS"
+>
+  <div
+    className="navcomponent__NavContainer2-ezej9e-1 inUGsX"
+  >
+    <h3
+      className="navcomponent__NavLogoH3-ezej9e-2 iYzIrr"
+    >
+      <a
+        href="/"
+      >
+        The Project αlphα
+      </a>
+    </h3>
+    <ul
+      className="navcomponent__NavItems-ezej9e-3 hBBRFh"
+    >
+      <li
+        className="navcomponent__Navlistitem-ezej9e-4 ewlFQI"
+      >
+        <a
+          className="navcomponent__Navlistitemlink-ezej9e-5 bHKNlq"
+          href="/documentation"
+        >
+          Documentation
+        </a>
+      </li>
+      <li
+        className="navcomponent__Navlistitem-ezej9e-4 ewlFQI"
+      >
+        <a
+          className="navcomponent__Navlistitemlink-ezej9e-5 VfRyT"
+          href="/getting-started"
+        >
+          Getting started
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Text Field Error 1`] = `
+<label
+  className="textfieldcomponent__TextFieldLabel-sc-1htrydw-0 eHhflX"
+  color="#E53935"
+>
+  ERROR
+  <input
+    className="textfieldcomponent__TextFieldInput-sc-1htrydw-1 ehBzDt"
+    color="#E53935"
+    type="text"
+  />
+</label>
+`;
+
+exports[`Storyshots Text Field Flat 1`] = `
+<label
+  className="textfieldcomponent__TextFieldLabel-sc-1htrydw-0 csFnSP"
+  color="#07928B"
+>
+  NONE
+  <input
+    className="textfieldcomponent__TextFieldInput-sc-1htrydw-1 jZjLDN"
+    color="#07928B"
+    type="text"
+  />
+</label>
+`;
+
+exports[`Storyshots Text Field Good 1`] = `
+<label
+  className="textfieldcomponent__TextFieldLabel-sc-1htrydw-0 edyCIl"
+  color="#68C281"
+>
+  GOOD
+  <input
+    className="textfieldcomponent__TextFieldInput-sc-1htrydw-1 bpICad"
+    color="#68C281"
+    type="text"
+  />
+</label>
+`;
+
+exports[`Storyshots Tile With Label 1`] = `
+<a
+  className="tilecomponent__TileContainer-sc-1gl5t7x-0 dyoMGg"
+  color="#68C281"
+  href="#"
+  label="Tile with label"
+>
+  <img
+    className="tilecomponent__TileImage-sc-1gl5t7x-1 jBVIIN"
+    src="test-file-stub"
+  />
+  <span
+    className="tilecomponent__TileLabel-sc-1gl5t7x-2 fFiIow"
+  >
+    Tile with label
+  </span>
+</a>
+`;
+
+exports[`Storyshots Tile Without Label 1`] = `
+<a
+  className="tilecomponent__TileContainer-sc-1gl5t7x-0 cnrbLP"
+  color="#68C281"
+  href="#"
+>
+  <img
+    className="tilecomponent__TileImage-sc-1gl5t7x-1 jBVIIN"
+    src="test-file-stub"
+  />
+</a>
+`;
+
+exports[`Storyshots Tile Without Label Preserve Height 1`] = `
+<a
+  className="tilecomponent__TileContainer-sc-1gl5t7x-0 dyoMGg"
+  color="#68C281"
+  href="#"
+>
+  <img
+    className="tilecomponent__TileImage-sc-1gl5t7x-1 jBVIIN"
+    src="test-file-stub"
+  />
+</a>
+`;

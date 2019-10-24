@@ -1,12 +1,11 @@
 import * as React from 'react'
 import Nav, { NavProps } from './nav.component'
-import { setup } from '../../setupTests'
-setup()
 import { render } from 'enzyme'
 
 const fakeProps: NavProps = {
   logoText: 'Logo Text',
   items: [{ href: '', name: 'Name inside', id: 0 }],
+  connected: false,
 }
 
 describe('Nav component', () => {

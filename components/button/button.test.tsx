@@ -1,8 +1,7 @@
 import * as React from 'react'
 import Button from './button.component'
-import { setup } from '../../setupTests'
-setup()
 import { render, mount } from 'enzyme'
+
 describe('Button component', () => {
   describe('rendering', () => {
     it('should render without error', () => {

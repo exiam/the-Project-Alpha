@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Tile, { TileProps } from './tile.component'
-import { setup } from '../../setupTests'
-setup()
 import { mount } from 'enzyme'
 
 const fakeProps: TileProps = {
