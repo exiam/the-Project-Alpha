@@ -36,8 +36,9 @@ const Button = styled.button<IProps>`
   font-size: 16px;
   font-weight: bold;
 
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
   box-shadow: none;
+  transform: scale(1);
 
   &:hover,
   &:focus {
@@ -48,7 +49,7 @@ const Button = styled.button<IProps>`
   &:active {
     background: ${p => getColor(p)};
     color: white;
-    box-shadow: 5.5px 5.5px ${p => getHoverColor(p)};
+    transform: scale(0.95);
   }
 `
 
