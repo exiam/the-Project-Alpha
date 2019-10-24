@@ -19,11 +19,12 @@ export interface NavProps {
 const NavContainer = styled.nav<{ connected: boolean }>`
   display: flex;
   justify-content: center;
+  font-weight: 400;
   align-items: center;
   height: 45px;
   font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: ${p =>
-    p.connected ? 'linear-gradient(to right, #07928B, #0C7983)' : '#256071'};
+    !p.connected ? 'linear-gradient(to left, #07928B, #36AB8A)' : '#0C7983'};
 `
 const NavContainer2 = styled.div`
   width: 1200px;
@@ -36,8 +37,12 @@ const NavContainer2 = styled.div`
 const NavLogo = styled.h3`
   color: #fcfcfc;
   font-size: 20pt;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: 0.8pt;
+
+  &:hover {
+    font-weight: 500;
+  }
 `
 const NavItems = styled.ul`
   display: flex;
@@ -57,10 +62,16 @@ const Navlistitemlink = styled.a<{ primary: boolean; connected: boolean }>`
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+  margin: 0 10px;
+  transition-duration: 0.1s;
   background-color: ${p =>
-    p.primary ? (!p.connected ? '#2F4858' : '#256071') : 'transparent'};
+    p.primary ? (p.connected ? '#256071' : '#0C7983') : 'transparent'};
   height: 100%;
   text-decoration: none;
+
+  &:hover {
+    background: ${p => (p.connected ? '#2f4858' : '#256071')};
+  }
 `
 const NavlistitemlinkandNextLink: React.SFC<{
   primary?: boolean

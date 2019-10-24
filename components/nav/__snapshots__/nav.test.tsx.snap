@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component snapshot should match with the connected snapshot 1`] = `
+<navcomponent__NavContainer
+  connected={true}
+>
+  <navcomponent__NavContainer2>
+    <navcomponent__NavLogo>
+      Logo Text
+    </navcomponent__NavLogo>
+    <navcomponent__NavItems>
+      <NavItem
+        connected={true}
+        href=""
+        id={0}
+        key="0"
+        name="Name inside"
+      />
+    </navcomponent__NavItems>
+  </navcomponent__NavContainer2>
+</navcomponent__NavContainer>
+`;
+
+exports[`Nav component snapshot should match with the not connected snapshot 1`] = `
+<navcomponent__NavContainer
+  connected={false}
+>
+  <navcomponent__NavContainer2>
+    <navcomponent__NavLogo>
+      Logo Text
+    </navcomponent__NavLogo>
+    <navcomponent__NavItems>
+      <NavItem
+        connected={false}
+        href=""
+        id={0}
+        key="0"
+        name="Name inside"
+      />
+    </navcomponent__NavItems>
+  </navcomponent__NavContainer2>
+</navcomponent__NavContainer>
+`;

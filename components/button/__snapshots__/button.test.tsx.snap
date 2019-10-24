@@ -1,224 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component snapshot primary should match with the primary large snapshot 1`] = `
-<buttoncomponent__Button
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "buttoncomponent__Button-sjtcji-0",
+        "isStatic": false,
+        "lastClassName": "elKMYf",
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border:",
+          [Function],
+          " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
+          [Function],
+          ";width:",
+          [Function],
+          "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;box-shadow:none;&:hover,&:focus{background:",
+          [Function],
+          ";color:white;box-shadow:3.5px 3.5px ",
+          [Function],
+          ";}&:active{background:",
+          [Function],
+          ";color:white;box-shadow:5.5px 5.5px ",
+          [Function],
+          ";}",
+        ],
+      },
+      "displayName": "buttoncomponent__Button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "buttoncomponent__Button-sjtcji-0",
+      "target": "button",
+      "toString": [Function],
+      "usesTheme": false,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
   large={true}
   primary={true}
 >
-  <StyledComponent
-    forwardedComponent={
-      Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "buttoncomponent__Button-sjtcji-0",
-          "isStatic": false,
-          "lastClassName": "fxpDav",
-          "rules": Array [
-            "background:",
-            [Function],
-            ";border:",
-            [Function],
-            " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
-            [Function],
-            ";width:",
-            [Function],
-            "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;&:hover,&:focus{background:",
-            [Function],
-            ";color:white;box-shadow:3.5px 3.5px ",
-            [Function],
-            ";}&:active{background:",
-            [Function],
-            ";color:white;border-width:5px;box-shadow:5.5px 5.5px ",
-            [Function],
-            ";}",
-          ],
-        },
-        "displayName": "buttoncomponent__Button",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "buttoncomponent__Button-sjtcji-0",
-        "target": "button",
-        "toString": [Function],
-        "usesTheme": false,
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      }
-    }
-    forwardedRef={null}
-    large={true}
-    primary={true}
-  >
-    <button
-      className="buttoncomponent__Button-sjtcji-0 fxpDav"
-    >
-      text inside
-    </button>
-  </StyledComponent>
-</buttoncomponent__Button>
+  text inside
+</StyledComponent>
 `;
 
 exports[`Button component snapshot primary should match with the primary snapshot 1`] = `
-<buttoncomponent__Button
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "buttoncomponent__Button-sjtcji-0",
+        "isStatic": false,
+        "lastClassName": "elKMYf",
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border:",
+          [Function],
+          " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
+          [Function],
+          ";width:",
+          [Function],
+          "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;box-shadow:none;&:hover,&:focus{background:",
+          [Function],
+          ";color:white;box-shadow:3.5px 3.5px ",
+          [Function],
+          ";}&:active{background:",
+          [Function],
+          ";color:white;box-shadow:5.5px 5.5px ",
+          [Function],
+          ";}",
+        ],
+      },
+      "displayName": "buttoncomponent__Button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "buttoncomponent__Button-sjtcji-0",
+      "target": "button",
+      "toString": [Function],
+      "usesTheme": false,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
   primary={true}
 >
-  <StyledComponent
-    forwardedComponent={
-      Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "buttoncomponent__Button-sjtcji-0",
-          "isStatic": false,
-          "lastClassName": "iPBsWM",
-          "rules": Array [
-            "background:",
-            [Function],
-            ";border:",
-            [Function],
-            " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
-            [Function],
-            ";width:",
-            [Function],
-            "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;&:hover,&:focus{background:",
-            [Function],
-            ";color:white;box-shadow:3.5px 3.5px ",
-            [Function],
-            ";}&:active{background:",
-            [Function],
-            ";color:white;border-width:5px;box-shadow:5.5px 5.5px ",
-            [Function],
-            ";}",
-          ],
-        },
-        "displayName": "buttoncomponent__Button",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "buttoncomponent__Button-sjtcji-0",
-        "target": "button",
-        "toString": [Function],
-        "usesTheme": false,
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      }
-    }
-    forwardedRef={null}
-    primary={true}
-  >
-    <button
-      className="buttoncomponent__Button-sjtcji-0 iPBsWM"
-    >
-      text inside
-    </button>
-  </StyledComponent>
-</buttoncomponent__Button>
+  text inside
+</StyledComponent>
 `;
 
 exports[`Button component snapshot secondary should match with the secondary large snapshot 1`] = `
-<buttoncomponent__Button
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "buttoncomponent__Button-sjtcji-0",
+        "isStatic": false,
+        "lastClassName": "elKMYf",
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border:",
+          [Function],
+          " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
+          [Function],
+          ";width:",
+          [Function],
+          "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;box-shadow:none;&:hover,&:focus{background:",
+          [Function],
+          ";color:white;box-shadow:3.5px 3.5px ",
+          [Function],
+          ";}&:active{background:",
+          [Function],
+          ";color:white;box-shadow:5.5px 5.5px ",
+          [Function],
+          ";}",
+        ],
+      },
+      "displayName": "buttoncomponent__Button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "buttoncomponent__Button-sjtcji-0",
+      "target": "button",
+      "toString": [Function],
+      "usesTheme": false,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
   large={true}
 >
-  <StyledComponent
-    forwardedComponent={
-      Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "buttoncomponent__Button-sjtcji-0",
-          "isStatic": false,
-          "lastClassName": "fbYDOv",
-          "rules": Array [
-            "background:",
-            [Function],
-            ";border:",
-            [Function],
-            " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
-            [Function],
-            ";width:",
-            [Function],
-            "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;&:hover,&:focus{background:",
-            [Function],
-            ";color:white;box-shadow:3.5px 3.5px ",
-            [Function],
-            ";}&:active{background:",
-            [Function],
-            ";color:white;border-width:5px;box-shadow:5.5px 5.5px ",
-            [Function],
-            ";}",
-          ],
-        },
-        "displayName": "buttoncomponent__Button",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "buttoncomponent__Button-sjtcji-0",
-        "target": "button",
-        "toString": [Function],
-        "usesTheme": false,
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      }
-    }
-    forwardedRef={null}
-    large={true}
-  >
-    <button
-      className="buttoncomponent__Button-sjtcji-0 fbYDOv"
-    >
-      text inside
-    </button>
-  </StyledComponent>
-</buttoncomponent__Button>
+  text inside
+</StyledComponent>
 `;
 
 exports[`Button component snapshot secondary should match with the secondary snapshot 1`] = `
-<buttoncomponent__Button>
-  <StyledComponent
-    forwardedComponent={
-      Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "buttoncomponent__Button-sjtcji-0",
-          "isStatic": false,
-          "lastClassName": "buamIz",
-          "rules": Array [
-            "background:",
-            [Function],
-            ";border:",
-            [Function],
-            " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
-            [Function],
-            ";width:",
-            [Function],
-            "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;&:hover,&:focus{background:",
-            [Function],
-            ";color:white;box-shadow:3.5px 3.5px ",
-            [Function],
-            ";}&:active{background:",
-            [Function],
-            ";color:white;border-width:5px;box-shadow:5.5px 5.5px ",
-            [Function],
-            ";}",
-          ],
-        },
-        "displayName": "buttoncomponent__Button",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "buttoncomponent__Button-sjtcji-0",
-        "target": "button",
-        "toString": [Function],
-        "usesTheme": false,
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      }
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "buttoncomponent__Button-sjtcji-0",
+        "isStatic": false,
+        "lastClassName": "elKMYf",
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border:",
+          [Function],
+          " solid 3px;border-radius:5px;padding:7.5px 15px;color:",
+          [Function],
+          ";width:",
+          [Function],
+          "px;margin:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold;transition-duration:0.3s;box-shadow:none;&:hover,&:focus{background:",
+          [Function],
+          ";color:white;box-shadow:3.5px 3.5px ",
+          [Function],
+          ";}&:active{background:",
+          [Function],
+          ";color:white;box-shadow:5.5px 5.5px ",
+          [Function],
+          ";}",
+        ],
+      },
+      "displayName": "buttoncomponent__Button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "buttoncomponent__Button-sjtcji-0",
+      "target": "button",
+      "toString": [Function],
+      "usesTheme": false,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
     }
-    forwardedRef={null}
-  >
-    <button
-      className="buttoncomponent__Button-sjtcji-0 buamIz"
-    >
-      text inside
-    </button>
-  </StyledComponent>
-</buttoncomponent__Button>
+  }
+  forwardedRef={null}
+>
+  text inside
+</StyledComponent>
 `;

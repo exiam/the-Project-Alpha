@@ -2,7 +2,7 @@ import * as React from 'react'
 import Button from './button.component'
 import { setup } from '../../setupTests'
 setup()
-import { render, shallow, mount } from 'enzyme'
+import { render, shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 describe('Button component', () => {
   describe('rendering', () => {
@@ -26,13 +26,13 @@ describe('Button component', () => {
     describe('primary', () => {
       it('should match with the primary snapshot', () => {
         expect(
-          toJSON(mount(<Button primary>text inside</Button>))
+          toJSON(shallow(<Button primary>text inside</Button>))
         ).toMatchSnapshot()
       })
       it('should match with the primary large snapshot', () => {
         expect(
           toJSON(
-            mount(
+            shallow(
               <Button primary large>
                 text inside
               </Button>
@@ -43,11 +43,11 @@ describe('Button component', () => {
     })
     describe('secondary', () => {
       it('should match with the secondary snapshot', () => {
-        expect(toJSON(mount(<Button>text inside</Button>))).toMatchSnapshot()
+        expect(toJSON(shallow(<Button>text inside</Button>))).toMatchSnapshot()
       })
       it('should match with the secondary large snapshot', () => {
         expect(
-          toJSON(mount(<Button large>text inside</Button>))
+          toJSON(shallow(<Button large>text inside</Button>))
         ).toMatchSnapshot()
       })
     })
