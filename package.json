@@ -49,7 +49,7 @@
     "coveralls": "^3.0.7",
     "dotenv-load": "^2.0.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^24.9.0",
     "next-compose-plugins": "^2.2.0",
     "next-env": "^1.1.0",
