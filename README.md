@@ -12,7 +12,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/exiam"><img src="https://avatars1.githubusercontent.com/u/36778679?v=4" width="100px;" alt="exiam"/><br /><sub><b>exiam</b></sub></a><br /><a href="https://github.com/hugos29dev/the-Project-Alpha/commits?author=exiam" title="Code">💻</a> <a href="#platform-exiam" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/exiam"><img src="https://avatars1.githubusercontent.com/u/36778679?v=4" width="100px;" alt="exiam"/><br /><sub><b>exiam</b></sub></a><br /><a href="https://github.com/hugos29dev/the-Project-Alpha/commits?author=exiam" title="Code">💻</a> <a href="#platform-exiam" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/hugos29dev/the-Project-Alpha/commits?author=exiam" title="Tests">⚠️</a> <a href="#tool-exiam" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/kvsm"><img src="https://avatars3.githubusercontent.com/u/1372660?v=4" width="100px;" alt="Kevin Smith"/><br /><sub><b>Kevin Smith</b></sub></a><br /><a href="https://github.com/hugos29dev/the-Project-Alpha/commits?author=kvsm" title="Tests">⚠️</a></td>
     <td align="center"><a href="http://iam-abbas.github.io"><img src="https://avatars3.githubusercontent.com/u/42001049?v=4" width="100px;" alt="Abbas"/><br /><sub><b>Abbas</b></sub></a><br /><a href="#infra-iam-abbas" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
