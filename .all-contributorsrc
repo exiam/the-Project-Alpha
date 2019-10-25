@@ -23,6 +23,15 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "iam-abbas",
+      "name": "Abbas",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/42001049?v=4",
+      "profile": "http://iam-abbas.github.io",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
