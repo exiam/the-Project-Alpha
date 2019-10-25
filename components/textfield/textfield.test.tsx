@@ -2,15 +2,14 @@ import * as React from 'react'
 import TextField, { Props, Color } from './textfield.component'
 import { setup } from '../../setupTests'
 setup()
-import { mount, shallow } from 'enzyme'
-import toJSON from 'enzyme-to-json'
+import { mount } from 'enzyme'
 
 const fakeProps: Props = {
   text: 'Hello',
   color: Color.good,
 }
 
-describe('Nav component', () => {
+describe('Text Field component', () => {
   describe('rendering', () => {
     it('should render without error', () => {
       mount(<TextField {...fakeProps} />)
@@ -26,11 +25,6 @@ describe('Nav component', () => {
 
     it('should render the label text uppercase', () => {
       expect(wrapper.find('label').text()).toBe('HELLO')
-    })
-  })
-  describe('snapshot', () => {
-    it('should match with the snapshot', () => {
-      expect(toJSON(shallow(<TextField {...fakeProps} />))).toMatchSnapshot()
     })
   })
 })

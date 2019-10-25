@@ -2,8 +2,7 @@ import * as React from 'react'
 import Nav, { NavProps } from './nav.component'
 import { setup } from '../../setupTests'
 setup()
-import { render, shallow } from 'enzyme'
-import toJSON from 'enzyme-to-json'
+import { render } from 'enzyme'
 
 const fakeProps: NavProps = {
   logoText: 'Logo Text',
@@ -23,16 +22,6 @@ describe('Nav component', () => {
     })
     it('should render the links text', () => {
       expect(wrapper.find('ul li').text()).toBe('Name inside')
-    })
-  })
-  describe('snapshot', () => {
-    it('should match with the connected snapshot', () => {
-      expect(
-        toJSON(shallow(<Nav connected {...fakeProps} />))
-      ).toMatchSnapshot()
-    })
-    it('should match with the not connected snapshot', () => {
-      expect(toJSON(shallow(<Nav {...fakeProps} />))).toMatchSnapshot()
     })
   })
 })

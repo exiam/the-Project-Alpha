@@ -18,7 +18,7 @@ const TextFieldLabel = styled.label<ElementProps>`
   color: ${p => p.color};
   font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
-  font-size: 14pt;
+  font-size: 16px;
   transform: translateX(10px);
 `
 const TextFieldInput = styled.input<ElementProps>`
@@ -29,9 +29,9 @@ const TextFieldInput = styled.input<ElementProps>`
   color: ${p => p.color};
   border: 4px solid ${p => p.color};
   border-radius: 10px;
-  height: 45px;
-  line-height: 40px;
-  font-size: 25px;
+  height: 35px;
+  line-height: 30px;
+  font-size: 16px;
   padding: 0 8px;
   font-weight: 400;
   transform: translateX(-8px);

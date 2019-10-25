@@ -21,7 +21,7 @@ const NavContainer = styled.nav<{ connected: boolean }>`
   justify-content: center;
   font-weight: 400;
   align-items: center;
-  height: 45px;
+  height: 40px;
   font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: ${p =>
     !p.connected ? 'linear-gradient(to left, #07928B, #36AB8A)' : '#0C7983'};
@@ -34,14 +34,17 @@ const NavContainer2 = styled.div`
   align-items: center;
 `
 
-const NavLogo = styled.h3`
-  color: #fcfcfc;
-  font-size: 20pt;
-  font-weight: 400;
-  letter-spacing: 0.8pt;
+const NavLogoH3 = styled.h3`
+  a {
+    color: #fcfcfc;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.8pt;
+    text-decoration: none;
 
-  &:hover {
-    font-weight: 500;
+    &:hover {
+      font-weight: 500;
+    }
   }
 `
 const NavItems = styled.ul`
@@ -56,7 +59,7 @@ const Navlistitem = styled.li`
   list-style: none;
 `
 const Navlistitemlink = styled.a<{ primary: boolean; connected: boolean }>`
-  font-size: 16pt;
+  font-size: 18px;
   color: #f8f8f8;
   display: flex;
   justify-content: center;
@@ -98,6 +101,23 @@ const NavItem: React.SFC<
   )
 }
 
+const NavLogo: React.SFC<{ storybook: boolean; href?: string }> = ({
+  storybook,
+  children,
+  href = '/',
+}) =>
+  storybook ? (
+    <NavLogoH3>
+      <a href={href}>{children}</a>
+    </NavLogoH3>
+  ) : (
+    <NavLogoH3>
+      <Link href={href}>
+        <a>{children}</a>
+      </Link>
+    </NavLogoH3>
+  )
+
 const defaultItems: listItem[] = [
   {
     id: 'doc',
@@ -131,7 +151,7 @@ const Nav: React.SFC<NavProps> = ({
   return (
     <NavContainer connected={connected}>
       <NavContainer2>
-        <NavLogo>{logoText}</NavLogo>
+        <NavLogo storybook={storybook}>{logoText}</NavLogo>
         <NavItems>
           {listItems.map(item => (
             <NavItem
