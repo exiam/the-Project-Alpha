@@ -9,7 +9,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "danger": "danger"
   },
   "dependencies": {
     "@hapi/joi": "^16.1.7",
@@ -47,6 +48,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.0",
     "coveralls": "^3.0.7",
+    "danger": "^9.2.2",
     "dotenv-load": "^2.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
