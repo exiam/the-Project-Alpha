@@ -12,7 +12,9 @@
       "profile": "https://github.com/exiam",
       "contributions": [
         "code",
-        "platform"
+        "platform",
+        "test",
+        "tool"
       ]
     },
     {
