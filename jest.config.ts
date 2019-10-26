@@ -1,3 +1,4 @@
+// @ts-ignore
 module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   transform: {
@@ -7,7 +8,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       useBabelrc: true,
-      tsConfigFile: 'jest.tsconfig.json',
+      tsConfigFile: 'jest.tsconfig.js',
       diagnostics: false,
     },
   },

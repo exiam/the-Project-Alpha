@@ -1,18 +1,17 @@
 import React from 'react'
 import fetch from 'isomorphic-unfetch'
-import { NextSFC } from '../@types/next'
-import { config } from '../@types'
-import Config from '../components/config/config.component'
+import { Config, NextSFC } from '../@types'
+import ConfigComponent from '../components/config/config.component'
 
 export interface IndexProps {
-  configs: config[]
+  configs: Config[]
 }
 
 const Index: NextSFC<IndexProps> = ({ configs }) => (
   <main>
     <h1>The Project Alpha</h1>
     {configs.map(config => (
-      <Config config={config} />
+      <ConfigComponent key={config.ID} config={config} />
     ))}
   </main>
 )

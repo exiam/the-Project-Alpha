@@ -4,13 +4,6 @@ function send(idea, message, method: (string) => void = warn) {
   method(`${message} - <i>${idea}</i>`)
 }
 
-schedule(async () => {
-  const fileChanged = await danger.git.modified_files
-  yarnNPMFavorite(fileChanged)
-  yarnLockUpdate(fileChanged)
-  testChanges(fileChanged)
-})
-
 function yarnNPMFavorite(fileChanged: string[]) {
   if (fileChanged.includes('package-lock.json'))
     send(
@@ -42,3 +35,10 @@ function testChanges(fileChanged: string[]) {
     )
   }
 }
+
+schedule(async () => {
+  const fileChanged = await danger.git.modified_files
+  yarnNPMFavorite(fileChanged)
+  yarnLockUpdate(fileChanged)
+  testChanges(fileChanged)
+})
