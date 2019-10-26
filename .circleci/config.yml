@@ -14,8 +14,8 @@ jobs:
             - v1-dependencies-
 
       - run:
-        name: Install dependencies
-        command: yarn
+          name: Install dependencies
+          command: yarn
 
       - save_cache:
           paths:
@@ -24,14 +24,14 @@ jobs:
 
       # run tests!
       - run:
-        name: DangerCI
-        command: yarn danger ci
+          name: DangerCI
+          command: yarn danger ci
       - run:
-        name: Unit tests
-        command: yarn test --coverage --forceExit --detectOpenHandles
+          name: Unit tests
+          command: yarn test --coverage --forceExit --detectOpenHandles
       - run:
-        name: Send Code Coverage
-        command: yarn test:coverage
+          name: Send Code Coverage
+          command: yarn test:coverage
 
 workflows:
   version: 2
