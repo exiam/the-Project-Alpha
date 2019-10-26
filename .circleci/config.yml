@@ -32,10 +32,37 @@ jobs:
       - run:
           name: Send Code Coverage
           command: yarn test:coverage
+  lint:
+    docker:
+      - image: circleci/node:10.13
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: yarn
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: ESLint
+          command: yarn lint
 
 workflows:
   version: 2
   test_all:
     jobs:
       #* - e2e_tests LATER
+      - lint
       - unit_test
