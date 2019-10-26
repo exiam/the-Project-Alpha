@@ -1,0 +1,13 @@
+# ORIGINAL FROM https://github.com/github/gitignore/blob/master/Node.gitignore
+
+# Dependency directories
+node_modules/
+
+# TypeScript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# next.js build output
+.next
