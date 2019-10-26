@@ -1,6 +1,5 @@
-version: 2
 jobs:
-  test:
+  unit_test:
     docker:
       - image: circleci/node:10.13
 
@@ -33,3 +32,10 @@ jobs:
       - run:
         name: Send Code Coverage
         command: yarn test:coverage
+
+workflows:
+  version: 2
+  test_all:
+    jobs:
+      #* - e2e_tests LATER
+      - unit_test
