@@ -1,6 +1,6 @@
 import mysql from 'serverless-mysql'
 import { SQLStatement } from 'sql-template-strings'
-
+import { SQLResponse } from '../@types'
 export const db = mysql({
   config: {
     host: process.env.NEXT_PUBLIC_MYSQL_HOST,
@@ -10,14 +10,9 @@ export const db = mysql({
   },
 })
 
-export interface QueryResult<Type> {
-  error?: any
-  data?: Type[]
-}
-
 export const query = async <T>(
   query: string | SQLStatement
-): Promise<QueryResult<T>> => {
+): Promise<SQLResponse<T[]>> => {
   const error = {}
   const data: T[] = []
   if (

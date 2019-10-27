@@ -1,5 +1,5 @@
 import JWT from 'jsonwebtoken'
-import { User } from '../@types/SQLresponse'
+import { User } from '../@types'
 
 export default async function(
   token: string | undefined

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Highlight from 'react-highlight.js'
 import { beautifier as JSONBeautifier } from '../../utils/json'
-import { config } from '../../@types'
+import { Config } from '../../@types'
 
 import './config.style.css'
 
@@ -9,7 +9,7 @@ interface IProps {
   config: config
 }
 
-const Config = ({ config }: IProps) => (
+const ConfigComponent = ({ config }: Props) => (
   <div key={config.ID}>
     <h3>
       {config.DisplayName}({config.FileName})
@@ -20,4 +20,4 @@ const Config = ({ config }: IProps) => (
   </div>
 )
 
-export default Config
+export default ConfigComponent

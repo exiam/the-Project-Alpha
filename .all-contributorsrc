@@ -1,24 +1,35 @@
 {
-  "files": [
-    "README.md"
-  ],
+  "files": ["CONTRIBUTING.md"],
   "imageSize": 100,
   "commit": false,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=for-the-badge)](#contributors)",
   "contributors": [
     {
       "login": "exiam",
       "name": "exiam",
       "avatar_url": "https://avatars1.githubusercontent.com/u/36778679?v=4",
       "profile": "https://github.com/exiam",
-      "contributions": [
-        "code",
-        "platform"
-      ]
+      "contributions": ["code", "test", "tool"]
+    },
+    {
+      "login": "kvsm",
+      "name": "Kevin Smith",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1372660?v=4",
+      "profile": "https://github.com/kvsm",
+      "contributions": ["test"]
+    },
+    {
+      "login": "iam-abbas",
+      "name": "Abbas",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/42001049?v=4",
+      "profile": "http://iam-abbas.github.io",
+      "contributions": ["infra"]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "the-Project-Alpha",
   "projectOwner": "hugos29dev",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import verifyToken from '../../helper/verifyToken'
-import { User } from '../../@types/SQLresponse'
+import { User } from '../../@types'
 
 export default async function(req: NextApiRequest, res: NextApiResponse) {
   if (req.method != 'GET')
