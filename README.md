@@ -68,7 +68,7 @@
     />
     <br />
     <br />
-    <a href="blob/master/CONTRIBUTING.md">
+    <a href="CONTRIBUTING.md">
       <img
         src="https://img.shields.io/badge/See-CONTRIBUTING.md-gray?style=for-the-badge&logoColor=white"
         alt="Open Collective"
