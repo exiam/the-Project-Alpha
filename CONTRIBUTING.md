@@ -21,6 +21,7 @@
     src="https://img.shields.io/github/hacktoberfest/2019/hugos29dev/the-Project-Alpha?label=hacktoberfest%20issues&style=for-the-badge"
     alt="HacktoberfesT"
   />
+  <img src="https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/hugos29dev/the-Project-Alpha&style=for-the-badge&logoColor=white" alt="Mergify">
 
   <h1>Contributors ✨</h1>
 
