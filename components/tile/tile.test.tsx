@@ -28,7 +28,7 @@ describe('Nav component', () => {
     })
 
     it('should render the label of the tile', () => {
-      expect(wrapper.text()).toBe('Sample Tile ')
+      expect(wrapper.text()).toBe('Sample Tile')
     })
   })
 })
