@@ -57,7 +57,7 @@ export default class MyDocument extends Document<{}> {
             }
           `}</style>
         </Head>
-        <body className="zi-main zi-layout">
+        <body>
           <Main />
           <NextScript />
         </body>

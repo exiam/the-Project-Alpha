@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as React from 'react'
 
 interface ContainerProps {
   width: number
@@ -81,7 +82,7 @@ const GroupBox: React.SFC<GroupBoxProps> = ({
     <GroupBoxInner>{children}</GroupBoxInner>
     <GroupBoxOverlay
       href={moreHref}
-      as={!!overlayText ? 'a' : 'span'}
+      as={overlayText ? 'a' : 'span'}
       text={!!overlayText}
       gradient={gradient}
     >

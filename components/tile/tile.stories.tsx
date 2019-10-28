@@ -1,5 +1,7 @@
 import * as React from 'react'
 import Tile from './tile.component'
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 //@ts-ignore
 import ReactIcon from './React.png'
 

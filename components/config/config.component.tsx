@@ -5,8 +5,8 @@ import { Config } from '../../@types'
 
 import './config.style.css'
 
-interface IProps {
-  config: config
+interface Props {
+  config: Config
 }
 
 const ConfigComponent = ({ config }: Props) => (

@@ -37,15 +37,16 @@ const TextFieldInput = styled.input<ElementProps>`
   transform: translateX(-8px);
   font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `
-const TextField = React.forwardRef<HTMLInputElement, Props>(
-  ({ color = Color.none, text = '' }, ref) => {
-    return (
-      <TextFieldLabel color={color}>
-        {text.toUpperCase()}
-        <TextFieldInput color={color} ref={ref} type="text" />
-      </TextFieldLabel>
-    )
-  }
-)
+const TextField = React.forwardRef<HTMLInputElement, Props>(function TextField(
+  { color = Color.none, text = '' },
+  ref
+) {
+  return (
+    <TextFieldLabel color={color}>
+      {text.toUpperCase()}
+      <TextFieldInput color={color} ref={ref} type="text" />
+    </TextFieldLabel>
+  )
+})
 
 export default TextField

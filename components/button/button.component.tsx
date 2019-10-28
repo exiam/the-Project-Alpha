@@ -1,36 +1,37 @@
 import styled from 'styled-components'
 
-interface IProps {
+interface Props {
   primary?: boolean
   color?: string
   hoverColor?: string
-  large?: boolean
+  large?: boolean | string
   size?: number
 }
 
-const getColor = (props: IProps, defaultColor: string = '#07928B'): string =>
-  props.color || defaultColor
-const getHoverColor = (
-  props: IProps,
-  defaultHoverColor: string = '#056b66'
-): string => props.hoverColor || defaultHoverColor
+const getColor = (props: Props, defaultColor?: string) =>
+  props.color || (defaultColor || '#07928B')
+const getHoverColor = (props: Props, defaultHoverColor?: string): string =>
+  props.hoverColor || (defaultHoverColor || '#056b66')
 
-const getSize = ({ large, size }: IProps): number => {
-  if (size) return size
-  const s = 200
-  if (large) return s * 2
+const getSize = ({ large, size }: Props): string => {
+  if (size) return size.toString()
+  let s: string | number = 200
+  if (large) {
+    if (typeof large == 'string') s = `calc(${2 * s + 'px ' + large}px)`
+    else if (typeof large == 'boolean') s += s
+  }
 
-  return s
+  return typeof s == 'number' ? s.toString() + 'px' : s
 }
 
-const Button = styled.button<IProps>`
+const Button = styled.button<Props>`
   background: ${p => (p.primary ? getColor(p) : 'transparent')};
   border: ${p => getColor(p)} solid 3px;
   border-radius: 5px;
   padding: 7.5px 15px;
 
   color: ${p => getColor(p, p.primary ? 'white' : undefined)};
-  width: ${p => getSize(p)}px;
+  width: ${p => getSize(p)};
   margin: 6px;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;

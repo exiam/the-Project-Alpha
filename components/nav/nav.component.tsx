@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-export interface listItem {
+export interface ListItem {
   href: string
   name: string
   id: number | string
@@ -11,7 +11,7 @@ export interface listItem {
 
 export interface NavProps {
   connected?: boolean
-  items?: listItem[]
+  items?: ListItem[]
   logoText?: string
   storybook?: boolean
 }
@@ -89,8 +89,8 @@ const NavlistitemlinkandNextLink: React.SFC<{
 )
 
 const NavItem: React.SFC<
-  listItem & { storybook: boolean; connected: boolean }
-> = ({ id, name, href, primary, storybook, connected }) => {
+  ListItem & { storybook: boolean; connected: boolean }
+> = ({ name, href, primary, storybook, connected }) => {
   const LinkElement = storybook ? Navlistitemlink : NavlistitemlinkandNextLink
   return (
     <Navlistitem>
@@ -118,7 +118,7 @@ const NavLogo: React.SFC<{ storybook: boolean; href?: string }> = ({
     </NavLogoH3>
   )
 
-const defaultItems: listItem[] = [
+const defaultItems: ListItem[] = [
   {
     id: 'doc',
     name: 'Documentation',
@@ -131,7 +131,7 @@ const defaultItems: listItem[] = [
     primary: true,
   },
 ]
-const connectedItems: listItem[] = [
+const connectedItems: ListItem[] = [
   {
     id: 'app',
     name: 'Dashboard',
