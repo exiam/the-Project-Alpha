@@ -75,7 +75,7 @@ export const Title = styled.h1<TitleProps>`
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
     font-size: 72px;
-    color: #fcfcfc;  
+    color: #fcfcfc;
     `
       : ''}
 `
