@@ -29,7 +29,7 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
 
   const q = await query<User>(mysql`
   SELECT * FROM user
-  WHERE 
+  WHERE
   Username=${value.username}
   LIMIT 1
   `)
