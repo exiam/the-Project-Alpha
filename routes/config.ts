@@ -55,7 +55,7 @@ export const getRoute = async (req: NextApiRequest, res: NextApiResponse) => {
       : undefined
   const limit =
     req.query && req.query.limit && !Array.isArray(req.query.limit)
-      ? parseInt(req.query.limit)
+      ? parseInt(req.query.limit, 10)
       : undefined
 
   const user = await verifyToken(token)
@@ -122,7 +122,7 @@ export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   } = schema.validate(req.body)
   if (error) return res.status(400).json({ error: error.details })
   const configs = await query(mysql`
-  INSERT INTO \`config\` (\`ID\`, \`UserID\`, \`DisplayName\`, \`Date\`, \`Type\`, \`FileFormat\`, \`FileName\`, \`Data\`) VALUES 
+  INSERT INTO \`config\` (\`ID\`, \`UserID\`, \`DisplayName\`, \`Date\`, \`Type\`, \`FileFormat\`, \`FileName\`, \`Data\`) VALUES
   (NULL, ${UserID}, ${DisplayName}, ${CreationDate}, ${Type}, ${FileFormat ||
     null}, ${FileName}, ${Data})
   `)

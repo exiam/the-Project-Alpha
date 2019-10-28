@@ -28,5 +28,5 @@ export interface User {
 }
 
 export interface NextSFC<Props> extends React.SFC<Props> {
-  getInitialProps: (ctx: DocumentContext | NextPageContext) => Promise<Props>
+  getInitialProps?: (ctx: DocumentContext | NextPageContext) => Promise<Props>
 }

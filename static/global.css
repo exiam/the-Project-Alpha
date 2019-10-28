@@ -1,0 +1,10 @@
+@import 'https://fonts.googleapis.com/css?family=Fira+Code:400,500|Fira+Sans:400,500|Poppins:300,600|Raleway:400,700,800&display=swap';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}

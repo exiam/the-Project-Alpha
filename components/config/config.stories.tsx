@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Config from './config.component'
 
 export default { title: 'Config' }
