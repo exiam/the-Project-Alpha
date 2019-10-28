@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import * as React from 'react'
 
+import '../static/global.css'
+
 export interface Container0Props {
   addStyles?: string
 }
