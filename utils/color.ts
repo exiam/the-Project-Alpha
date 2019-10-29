@@ -1,3 +1,5 @@
+import _colors from './colors.json'
+
 export function brightness(col: string, amt: number): string {
   let usePound = false
 
@@ -24,4 +26,22 @@ export function brightness(col: string, amt: number): string {
   else if (g < 0) g = 0
 
   return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16)
+}
+
+export const colors = Object.keys(_colors).map(cs => _colors[cs]['300'])
+
+export type gradColor = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+
+export function findColor(letter: string, grad: gradColor = 300): string {
+  const colors = Object.keys(_colors).map(cs => _colors[cs][grad.toString()])
+  const numberFromText = (text: string) =>
+    parseInt(
+      text
+        .split('')
+        .map(chr => chr.charCodeAt(0))
+        .join(''),
+      10
+    )
+
+  return colors[numberFromText(letter) % colors.length]
 }

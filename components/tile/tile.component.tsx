@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 
 interface TileContainerProps {
   color: string
@@ -42,7 +41,6 @@ export interface TileProps {
   img?: string | JSX.Element
   preserveHeightWithoutLabel?: boolean
   fontIcon?: boolean
-  external?: boolean
   href?: string
 }
 
@@ -53,16 +51,9 @@ const Tile: React.SFC<TileProps> = ({
   fontIcon,
   preserveHeightWithoutLabel: phwl = false,
   href = '#',
-  external,
 }) => {
   return (
-    <LinkElement
-      href={href}
-      external={external}
-      phwl={phwl}
-      color={color}
-      label={label}
-    >
+    <TileContainer href={href} phwl={phwl} color={color} label={label}>
       {img && typeof img == 'string' ? (
         <TileImage src={img} />
       ) : fontIcon ? (
@@ -71,19 +62,8 @@ const Tile: React.SFC<TileProps> = ({
         img
       )}
       {label && <TileLabel>{label}</TileLabel>}
-    </LinkElement>
+    </TileContainer>
   )
 }
-
-export const LinkElement: React.SFC<
-  { external: boolean; href: string } & TileContainerProps
-> = ({ external, href, ...props }) =>
-  !external ? (
-    <Link href={href}>
-      <TileContainer {...props} />
-    </Link>
-  ) : (
-    <TileContainer {...props} href={href} />
-  )
 
 export default Tile

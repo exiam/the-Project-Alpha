@@ -30,6 +30,7 @@ export const Container1 = styled.main<Container1Props>`
   flex-direction: column;
   min-height: 500px;
   align-items: center;
+  font-size: 20px;
   ${p => p.addStyles || ''}
   @media screen and (min-width: 1900px) {
     position: relative;

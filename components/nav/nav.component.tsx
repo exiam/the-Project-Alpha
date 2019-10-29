@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import { User } from '../../@types'
+import { findColor } from '../../utils/color'
 
 export interface ListItem {
   href: string
@@ -10,10 +11,9 @@ export interface ListItem {
 }
 
 export interface NavProps {
-  connected?: boolean
+  connected: false | User
   items?: ListItem[]
   logoText?: string
-  storybook?: boolean
 }
 
 const NavContainer = styled.nav<{ connected: boolean }>`
@@ -76,47 +76,42 @@ const Navlistitemlink = styled.a<{ primary: boolean; connected: boolean }>`
     background: ${p => (p.connected ? '#2f4858' : '#256071')};
   }
 `
-const NavlistitemlinkandNextLink: React.SFC<{
-  primary?: boolean
-  href: string
-  connected: boolean
-}> = ({ primary, href, children, connected }) => (
-  <Link href={href}>
-    <Navlistitemlink connected={connected} primary={primary}>
-      {children}
-    </Navlistitemlink>
-  </Link>
-)
 
-const NavItem: React.SFC<
-  ListItem & { storybook: boolean; connected: boolean }
-> = ({ name, href, primary, storybook, connected }) => {
-  const LinkElement = storybook ? Navlistitemlink : NavlistitemlinkandNextLink
+const NavItem: React.SFC<ListItem & { connected: boolean }> = ({
+  name,
+  href,
+  primary,
+  connected,
+}) => {
   return (
     <Navlistitem>
-      <LinkElement href={href} primary={primary} connected={connected}>
+      <Navlistitemlink href={href} primary={primary} connected={connected}>
         {name}
-      </LinkElement>
+      </Navlistitemlink>
     </Navlistitem>
   )
 }
 
-const NavLogo: React.SFC<{ storybook: boolean; href?: string }> = ({
-  storybook,
-  children,
-  href = '/',
-}) =>
-  storybook ? (
-    <NavLogoH3>
-      <a href={href}>{children}</a>
-    </NavLogoH3>
-  ) : (
-    <NavLogoH3>
-      <Link href={href}>
-        <a>{children}</a>
-      </Link>
-    </NavLogoH3>
-  )
+const NavLogo: React.SFC<{ href?: string }> = ({ children, href = '/' }) => (
+  <NavLogoH3>
+    <a href={href}>{children}</a>
+  </NavLogoH3>
+)
+
+const UserCircle = styled.a<{ color: string }>`
+  display: flex;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: ${p => p.color};
+  font-weight: bolder;
+  font-family: 'DM Serif Display', 'DM Serif Text', serif;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+`
 
 const defaultItems: ListItem[] = [
   {
@@ -144,23 +139,26 @@ const Nav: React.SFC<NavProps> = ({
   connected = false,
   items,
   logoText = 'The Project αlphα',
-  storybook,
 }) => {
   const listItems = items || (connected ? connectedItems : defaultItems)
-
+  const letters =
+    connected &&
+    connected.DisplayName.split(' ')
+      .map(c => c.toUpperCase()[0])
+      .join('')
   return (
-    <NavContainer connected={connected}>
+    <NavContainer connected={!!connected}>
       <NavContainer2>
-        <NavLogo storybook={storybook}>{logoText}</NavLogo>
+        <NavLogo>{logoText}</NavLogo>
         <NavItems>
           {listItems.map(item => (
-            <NavItem
-              key={item.id}
-              storybook={storybook}
-              connected={connected}
-              {...item}
-            />
+            <NavItem key={item.id} connected={!!connected} {...item} />
           ))}
+          {connected && (
+            <UserCircle href="/app" color={findColor(letters)}>
+              {letters}
+            </UserCircle>
+          )}
         </NavItems>
       </NavContainer2>
     </NavContainer>

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { DocumentContext } from 'next/document'
 import { NextPageContext } from 'next'
 
 export interface Config {
@@ -27,6 +26,10 @@ export interface User {
   Password: string
 }
 
-export interface NextSFC<Props> extends React.SFC<Props> {
-  getInitialProps?: (ctx: DocumentContext | NextPageContext) => Promise<Props>
+export type PageCtx<Q = {}> = NextPageContext & {
+  query?: Q
+}
+
+export interface NextSFC<Props, Query = {}> extends React.SFC<Props> {
+  getInitialProps?: (ctx: PageCtx<Query>) => Promise<Props | void>
 }

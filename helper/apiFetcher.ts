@@ -21,9 +21,9 @@ export default async function<T>(
   const host = server ? headers['x-forwarded-host'] : location.host
   const pageRequest =
     process.env.NODE_ENV == 'production'
-      ? `${protocol}//${host + path}`
-      : `http://localhost:3000${path}`
-  const res = await fetch(pageRequest, params)
+      ? `${protocol}//${host}`
+      : `http://localhost:3000`
+  const res = await fetch(pageRequest + path, params)
   const json = (await res.json()) as T
   return json
 }

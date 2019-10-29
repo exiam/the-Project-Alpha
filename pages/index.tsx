@@ -19,7 +19,6 @@ import {
   TSIntegrations,
   GulpIntegration,
 } from '../img/integrations'
-import Link from 'next/link'
 
 const FileImageSVG = styled.svg`
   align-self: flex-end;
@@ -85,11 +84,11 @@ const Index: NextSFC<{}> = () => (
       <Title>
         <Bold>Contribution</Bold>
       </Title>
-      <Link href="/contribution">
+      <a href="/contribution">
         <Button large color="#256071" hoverColor="#2F4858">
           Go to page
         </Button>
-      </Link>
+      </a>
     </Section3>
   </Container>
 )

@@ -43,7 +43,7 @@ export default class MyDocument extends Document<{}> {
           />
           <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
           <link
-            href="https://fonts.googleapis.com/css?family=Fira+Code:400,500|Fira+Sans:400,500|Poppins:300,600|Raleway:400,700,800&display=swap"
+            href="https://fonts.googleapis.com/css?family=Fira+Code:400,500|Fira+Sans:400,500|Poppins:300,600|Raleway:400,700,800|DM+Serif+Display&display=swap"
             rel="stylesheet"
           />
         </Head>
