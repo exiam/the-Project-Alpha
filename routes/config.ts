@@ -6,6 +6,7 @@ import verifyToken from '../helper/verifyToken'
 /**
  * Handle GET Requests on /api/config
  * @param {number} userID limit the number of elements
+ * @param {number | undefined} id id of the config
  * @param {number | undefined} limit limit the number of elements
  * @returns {object} see example response
  * @exports
@@ -24,20 +25,27 @@ import verifyToken from '../helper/verifyToken'
  *  ]
  *}
  */
-export const getFunction = (UserID: number, limit?: number) => {
+export const getFunction = (UserID: number, id?: number, limit?: number) => {
   let q: SQLStatement
-  if (!limit) {
+  if (id) {
     q = mysql`
     SELECT *
     FROM config
     WHERE UserID=${UserID}
+    AND ID=${id}
+  `
+  } else if (limit) {
+    q = mysql`
+    SELECT *
+    FROM config
+    WHERE UserID=${UserID}
+    LIMIT ${limit}
   `
   } else {
     q = mysql`
     SELECT *
     FROM config
     WHERE UserID=${UserID}
-    LIMIT ${limit}
   `
   }
   return query(q)
@@ -55,7 +63,11 @@ export const getRoute = async (req: NextApiRequest, res: NextApiResponse) => {
       : undefined
   const limit =
     req.query && req.query.limit && !Array.isArray(req.query.limit)
-      ? parseInt(req.query.limit)
+      ? parseInt(req.query.limit, 10)
+      : undefined
+  const id =
+    req.query && req.query.id && !Array.isArray(req.query.id)
+      ? parseInt(req.query.id, 10)
       : undefined
 
   const user = await verifyToken(token)
@@ -66,7 +78,7 @@ export const getRoute = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   }
 
-  const configs = await getFunction(user.ID, limit)
+  const configs = await getFunction(user.ID, id, limit)
   if (Object.keys(configs.error).length > 0) {
     res.status(500).json({ configs })
   } else {
@@ -122,7 +134,7 @@ export const postRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   } = schema.validate(req.body)
   if (error) return res.status(400).json({ error: error.details })
   const configs = await query(mysql`
-  INSERT INTO \`config\` (\`ID\`, \`UserID\`, \`DisplayName\`, \`Date\`, \`Type\`, \`FileFormat\`, \`FileName\`, \`Data\`) VALUES 
+  INSERT INTO \`config\` (\`ID\`, \`UserID\`, \`DisplayName\`, \`Date\`, \`Type\`, \`FileFormat\`, \`FileName\`, \`Data\`) VALUES
   (NULL, ${UserID}, ${DisplayName}, ${CreationDate}, ${Type}, ${FileFormat ||
     null}, ${FileName}, ${Data})
   `)

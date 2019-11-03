@@ -4,6 +4,7 @@ import JWT from 'jsonwebtoken'
 import mysql from 'sql-template-strings'
 import { query } from '../../../lib/db'
 import bcrypt from 'bcrypt'
+import { User } from '../../../@types'
 
 export interface LoginBody {
   username: string
@@ -26,18 +27,9 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
 
   if (error) return res.status(406).json({ error: error.details[0].message })
 
-  interface user {
-    ID: string
-    RegistrationDate: any
-    Username: string
-    DisplayName: string
-    Email: string
-    Password: string
-  }
-
-  const q = await query<user>(mysql`
+  const q = await query<User>(mysql`
   SELECT * FROM user
-  WHERE 
+  WHERE
   Username=${value.username}
   LIMIT 1
   `)

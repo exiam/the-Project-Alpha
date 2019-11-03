@@ -1,6 +1,7 @@
-const nextEnv = require('next-env')
+const ENV = require('next-env')
+const IMAGES = require('next-images')
 const dotenvLoad = require('dotenv-load')
+const CSS = require('@zeit/next-css')
 dotenvLoad()
 
-const CSS = require('@zeit/next-css')
-module.exports = CSS(nextEnv({}))
+module.exports = CSS(ENV(IMAGES({})))

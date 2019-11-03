@@ -1,21 +1,78 @@
-![The project alpha banner](docs/header.png)
+<p align="center">
+  <a href="https://theprojectalpha.now.sh/">
+    <img src="docs/header.png" alt="The project alpha banner" height="200px" />
+  </a>
+</p>
 
-# The Project Alpha
+<p align="center">
+  <a href="https://circleci.com/gh/hugos29dev/the-Project-Alpha"
+    ><img
+      src="https://img.shields.io/circleci/build/gh/hugos29dev/the-Project-Alpha/master?style=for-the-badge&token=ead7e1cbf89f501d2b6ae74ef5d05bebc31f64c6&logo=circleci&logoColor=white"
+      alt="Circle CI"/></a
+  >&nbsp;<a
+    href="https://github.com/hugos29dev/the-Project-Alpha/blob/master/LICENSE"
+    ><img
+      src="https://img.shields.io/github/license/hugos29dev/the-Project-Alpha?style=for-the-badge"
+      alt="Liscence"/></a
+  >&nbsp;<img
+    src="https://img.shields.io/david/hugos29dev/the-Project-Alpha?logo=yarn&logoColor=white&style=for-the-badge"
+    alt="David"
+  />&nbsp;<a
+    href="https://snyk.io/test/github/hugos29dev/the-Project-Alpha?targetFile=package.json"
+    ><img
+      src="https://img.shields.io/snyk/vulnerabilities/github/hugos29dev/the-Project-Alpha?logo=snyk&logoColor=white&style=for-the-badge"
+      alt="Vulnerabilities"/></a
+  >&nbsp;<a
+    href="https://www.codefactor.io/repository/github/hugos29dev/the-project-alpha"
+    ><img
+      alt="CodeFactor Grade"
+      src="https://img.shields.io/codefactor/grade/github/hugos29dev/the-Project-Alpha?logo=codefactor&logoColor=white&style=for-the-badge"
+  /></a>
+</p>
+<br />
+<hr />
+<div>
+  <h2 align="center">
+    ⭐ Please help the project by giving it a <b>Github star</b> ⭐
+  </h2>
+  <p align="center">
+    <img
+      alt="GitHub stars"
+      src="https://img.shields.io/github/stars/hugos29dev/the-Project-Alpha?logo=github&style=for-the-badge"
+    />
+  </p>
+  <pre
+    align="center"
+  >We need at least <b>100 stars</b> on Github to create an <b>Open Collective OpenSource Project</b></pre>
+  <h2 align="center">🌟</h2>
+  <p align="center">
+    <a href="https://twitter.com/ThePr0jectAlpha"
+      ><img
+        src="https://img.shields.io/twitter/follow/ThePr0jectAlpha?logo=twitter&logoColor=white&style=for-the-badge"
+        alt="Follow @ThePr0jectAlpha"
+    /></a>
+  </p>
+</div>
+<hr />
+<h2 align="center">Contribution</h2>
 
-[![CircleCI](https://img.shields.io/circleci/build/gh/hugos29dev/the-Project-Alpha?style=for-the-badge&token=ead7e1cbf89f501d2b6ae74ef5d05bebc31f64c6)](https://circleci.com/gh/hugos29dev/the-Project-Alpha) [![Licence](https://img.shields.io/github/license/hugos29dev/the-Project-Alpha?style=for-the-badge)](https://github.com/hugos29dev/the-Project-Alpha/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/hugos29dev/the-Project-Alpha?style=for-the-badge)](https://github.com/hugos29dev/the-Project-Alpha/issues) [![Twitter Follow](https://img.shields.io/twitter/follow/ThePr0jectAlpha?logo=twitter&logoColor=white&style=for-the-badge)](https://twitter.com/ThePr0jectAlpha?s=17) [![Website](https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Fproject-alpha.now.sh)](https://project-alpha.now.sh/) [![GitHub last commit](https://img.shields.io/github/last-commit/hugos29dev/the-Project-Alpha?style=for-the-badge)](https://github.com/hugos29dev/the-Project-Alpha/commits/) ![Using NextJS & Zeit Now](https://img.shields.io/badge/Using-NextJS%20%26%20Zeit%20Now-blue?style=for-the-badge&logo=next) ![David](https://img.shields.io/david/hugos29dev/the-Project-Alpha?logo=npm&style=for-the-badge) ![GitHub Hacktoberfest combined status](https://img.shields.io/github/hacktoberfest/2019/hugos29dev/the-Project-Alpha?label=hacktoberfest%20issues&style=for-the-badge) [<img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Patreon" height="28"/>](https://www.patreon.com/project_alpha) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors)
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/exiam"><img src="https://avatars1.githubusercontent.com/u/36778679?v=4" width="100px;" alt="exiam"/><br /><sub><b>exiam</b></sub></a><br /><a href="https://github.com/hugos29dev/the-Project-Alpha/commits?author=exiam" title="Code">💻</a> <a href="#platform-exiam" title="Packaging/porting to new platform">📦</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+<div>
+  <p align="center">
+    <a href="https://www.patreon.com/project_alpha"
+      ><img
+        src="https://img.shields.io/badge/Become%20a-Patron-red?style=for-the-badge&logo=patreon&logoColor=white"
+        alt="Patreon"/></a
+    >&nbsp;<img
+      src="https://img.shields.io/badge/OpenCollective-Later-yellow?style=for-the-badge&logo=open%20collective&logoColor=white"
+      alt="Open Collective"
+    />
+    <br />
+    <br />
+    <a href="CONTRIBUTING.md">
+      <img
+        src="https://img.shields.io/badge/See-CONTRIBUTING.md-gray?style=for-the-badge&logoColor=white"
+        alt="Open Collective"
+    /></a>
+  </p>
+</div>
+<hr />

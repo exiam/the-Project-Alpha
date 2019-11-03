@@ -3,6 +3,7 @@
     "NEXT_PUBLIC_MYSQL_HOST": "@tpa_mysql_host",
     "NEXT_PUBLIC_MYSQL_DATABASE": "@tpa_mysql_database",
     "NEXT_PUBLIC_MYSQL_USER": "@tpa_mysql_user",
-    "NEXT_PUBLIC_MYSQL_PASSWORD": "@tpa_mysql_password"
+    "NEXT_PUBLIC_MYSQL_PASSWORD": "@tpa_mysql_password",
+    "NEXT_PUBLIC_SECRET_PASSPHRASE": "@tpa_passphrase"
   }
 }

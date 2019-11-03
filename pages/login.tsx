@@ -1,12 +1,11 @@
-import { NextSFC } from '../@types/next'
+import { NextSFC } from '../@types'
 import Router from 'next/router'
-import { useRef } from 'react'
-
+import * as React from 'react'
 import cookies from 'next-cookies'
 import apiFetcher from '../helper/apiFetcher'
 import { NextPageContext } from 'next'
 import { IncomingHttpHeaders } from 'http2'
-import { User } from '../@types/SQLresponse'
+import { User } from '../@types'
 import styled from 'styled-components'
 
 export interface LoginProps {
@@ -15,8 +14,8 @@ export interface LoginProps {
 }
 
 const Login: NextSFC<LoginProps> = ({ headers }) => {
-  const usernameField = useRef<HTMLInputElement>()
-  const passwordField = useRef<HTMLInputElement>()
+  const usernameField = React.useRef<HTMLInputElement>()
+  const passwordField = React.useRef<HTMLInputElement>()
 
   const loginBtnClick = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -24,6 +23,7 @@ const Login: NextSFC<LoginProps> = ({ headers }) => {
     e.preventDefault()
 
     const { token, error } = await apiFetcher<{
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       error?: string | any
       token?: string
     }>(false, headers, '/api/auth/login', {
@@ -93,7 +93,9 @@ Login.getInitialProps = async (ctx: NextPageContext) => {
           Router.push('/app')
         }
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return {

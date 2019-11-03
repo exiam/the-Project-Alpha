@@ -1,6 +1,5 @@
-version: 2
 jobs:
-  build:
+  unit_test:
     docker:
       - image: circleci/node:10.13
 
@@ -14,7 +13,9 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn
+      - run:
+          name: Install dependencies
+          command: yarn
 
       - save_cache:
           paths:
@@ -22,5 +23,19 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test --coverage --forceExit --detectOpenHandles
-      - run: yarn test:coverage
+      - run:
+          name: DangerCI
+          command: yarn danger ci
+      - run:
+          name: Unit tests
+          command: yarn test --coverage --forceExit --detectOpenHandles
+      - run:
+          name: Send Code Coverage
+          command: yarn test:coverage
+
+workflows:
+  version: 2
+  test_all:
+    jobs:
+      #* - e2e_tests LATER
+      - unit_test
