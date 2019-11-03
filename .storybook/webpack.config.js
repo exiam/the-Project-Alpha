@@ -7,5 +7,13 @@ module.exports = ({ config, mode }) => {
     },
   })
   config.resolve.extensions.push('.ts', '.tsx')
+  config.externals = {
+    ...config.externals,
+    jsdom: 'window',
+    cheerio: 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': 'window',
+    'react/addons': true,
+  }
   return config
 }
